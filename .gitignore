@@ -22,3 +22,8 @@ _testmain.go
 *.exe
 *.test
 *.prof
+
+plumbing
+conf/runtime.conf
+log/*
+data/*
