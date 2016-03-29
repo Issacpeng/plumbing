@@ -1,0 +1,36 @@
+{
+	"ImportPath": "github.com/containerops/plumbing",
+	"GoVersion": "go1.6",
+	"GodepVersion": "v60",
+	"Deps": [
+		{
+			"ImportPath": "github.com/Unknwon/com",
+			"Comment": "v1",
+			"Rev": "28b053d5a2923b87ce8c5a08f3af779894a72758"
+		},
+		{
+			"ImportPath": "github.com/astaxie/beego/config",
+			"Comment": "v1.6.1-5-g88c5dfa",
+			"Rev": "88c5dfa6ead42e624c2e7d9e04eab6cb2d07412a"
+		},
+		{
+			"ImportPath": "github.com/codegangsta/cli",
+			"Comment": "1.2.0-235-gbc465be",
+			"Rev": "bc465becccd1d527002fda095fc3c19d9c115029"
+		},
+		{
+			"ImportPath": "github.com/go-macaron/inject",
+			"Rev": "c5ab7bf3a307593cd44cb272d1a5beea473dd072"
+		},
+		{
+			"ImportPath": "gopkg.in/ini.v1",
+			"Comment": "v1.11.0",
+			"Rev": "12f418cc7edc5a618a51407b7ac1f1f512139df3"
+		},
+		{
+			"ImportPath": "gopkg.in/macaron.v1",
+			"Comment": "v1.1.3",
+			"Rev": "94a5ef7105036242f79e5e07a8eb8651d06c8533"
+		}
+	]
+}
