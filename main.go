@@ -19,7 +19,7 @@ func main() {
 	app.Email = setting.Email
 
 	app.Commands = []cli.Command{
-		cmd.CmdWeb,
+		cmd.CmdHTTPS,
 	}
 
 	app.Flags = append(app.Flags, []cli.Flag{}...)
