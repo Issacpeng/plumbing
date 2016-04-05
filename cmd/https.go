@@ -15,11 +15,11 @@ import (
 	"github.com/containerops/plumbing/web"
 )
 
-var CmdWeb = cli.Command{
+var CmdHTTPS = cli.Command{
 	Name:        "web",
 	Usage:       "start plumbing web service",
 	Description: "plumbing is the module of handler docker and rkt image.",
-	Action:      runWeb,
+	Action:      runHTTPS,
 	Flags: []cli.Flag{
 		cli.StringFlag{
 			Name:  "address",
@@ -34,7 +34,7 @@ var CmdWeb = cli.Command{
 	},
 }
 
-func runWeb(c *cli.Context) {
+func runHTTPS(c *cli.Context) {
 	m := macaron.New()
 
 	//Set Macaron Web Middleware And Routers
