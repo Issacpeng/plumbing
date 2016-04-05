@@ -20,6 +20,7 @@ func main() {
 
 	app.Commands = []cli.Command{
 		cmd.CmdHTTPS,
+		cmd.CmdImport,
 	}
 
 	app.Flags = append(app.Flags, []cli.Flag{}...)
