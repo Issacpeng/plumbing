@@ -18,6 +18,11 @@ var (
 	HttpsCertFile string
 	HttpsKeyFile  string
 	LogPath       string
+	SshPort       string
+	SshHost       string
+	RepoPath      string
+	KeyPath       string
+	StartSsh      string
 )
 
 func init() {
@@ -66,5 +71,35 @@ func init() {
 
 	if logpath := conf.String("log::filepath"); logpath != "" {
 		LogPath = logpath
+	}
+
+	if sshport := conf.String("plumbing::sshport"); sshport != "" {
+		SshPort = sshport
+	} else if sshport == "" {
+		err = fmt.Errorf("ssh port config value is null")
+	}
+
+	if sshhost := conf.String("plumbing::sshhost"); sshhost != "" {
+		SshHost = sshhost
+	} else if sshhost == "" {
+		err = fmt.Errorf("ssh host config value is null")
+	}
+
+	if repopath := conf.String("plumbing::repopath"); repopath != "" {
+		RepoPath = repopath
+	} else if repopath == "" {
+		err = fmt.Errorf("repo path config value is null")
+	}
+
+	if keypath := conf.String("plumbing::keypath"); keypath != "" {
+		KeyPath = keypath
+	} else if keypath == "" {
+		err = fmt.Errorf("key path config value is null")
+	}
+
+	if startssh := conf.String("plumbing::startssh"); startssh != "" {
+		StartSsh = startssh
+	} else if startssh == "" {
+		err = fmt.Errorf("start ssh config value is null")
 	}
 }

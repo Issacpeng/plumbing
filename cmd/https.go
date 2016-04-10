@@ -10,6 +10,7 @@ import (
 	"github.com/codegangsta/cli"
 	"gopkg.in/macaron.v1"
 
+	"github.com/containerops/plumbing/modules/ssh"
 	"github.com/containerops/plumbing/setting"
 	"github.com/containerops/plumbing/utils"
 	"github.com/containerops/plumbing/web"
@@ -18,7 +19,7 @@ import (
 var CmdHTTPS = cli.Command{
 	Name:        "web",
 	Usage:       "start plumbing web service",
-	Description: "plumbing is the module of handler docker and rkt image.",
+	Description: "plumbing is a key/value engine for Git backend storage.",
 	Action:      runHTTPS,
 	Flags: []cli.Flag{
 		cli.StringFlag{
@@ -39,6 +40,11 @@ func runHTTPS(c *cli.Context) {
 
 	//Set Macaron Web Middleware And Routers
 	web.SetPlumbingMacaron(m)
+
+	if setting.StartSsh == "true" {
+		ssh.RunSshServer("pzh", "ssh")
+		fmt.Printf("SSH server started on :%v", setting.SshPort)
+	}
 
 	switch setting.ListenMode {
 	case "http":
