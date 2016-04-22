@@ -41,8 +41,9 @@ func runHTTPS(c *cli.Context) {
 	//Set Macaron Web Middleware And Routers
 	web.SetPlumbingMacaron(m)
 
+	//Start SSH Server if value is true
 	if setting.StartSsh == "true" {
-		ssh.RunSshServer("pzh", "ssh")
+		ssh.RunSshServer()
 		fmt.Printf("SSH server started on :%v", setting.SshPort)
 	}
 
